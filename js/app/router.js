@@ -16,7 +16,6 @@ App.IndexRoute = Ember.Route.extend({
 
 
 
-
 App.SignupsRoute = Ember.Route.extend({
   model: function(){
     return this.store.find('signup');

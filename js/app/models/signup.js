@@ -1,4 +1,10 @@
 App.Signup = DS.Model.extend({
+  email: DS.attr('string')
+});
+
+
+/* used for hardcoded fixtures
+App.Signup = DS.Model.extend({
   name: DS.attr('string'),
   email: DS.attr('string'),
   isAdmin: DS.attr('boolean')
@@ -24,3 +30,4 @@ App.Signup.FIXTURES = [
     isAdmin: true
   }
 ];
+*/
