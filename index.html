@@ -54,18 +54,16 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
+            <th>ID</th>
             <th>Email</th>
-            <th>Is Admin?</th>
           </tr>
         </thead>
         <tbody>
           {{#each signup in model}}
             <tr>
+              <td>{{_view.contentIndex}}</td>
               <td>{{signup.id}}</td>
-              <td>{{signup.name}}</td>
               <td>{{signup.email}}</td>
-              <td>{{signup.isAdmin}}</td>
             </tr>
           {{/each}}
         </tbody>
