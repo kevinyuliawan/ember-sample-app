@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Inbox Health Beta Signup</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <script type="text/x-handlebars" data-template-name="index">
+
+        <form class="form-signin" role="form">
+          <h2 class="form-signin-heading">Sign up</h2>
+
+        <div class="alert alert-info customalert" id="showWarning" style="display:none;"><strong>Heads up!</strong> Please make sure that the following fields are not blank and that you have provided a valid e-mail.</div>
+
+          <div class="form-group" id="nameField">
+            {{input type="text" class="form-control" placeholder="Name" value=newName}}
+          </div>
+          <div class="form-group" id="emailField">
+            {{input type="email" class="form-control" placeholder="Email address" value=newEmail}}
+          </div>
+          <div class="checkbox">
+            <label>
+              {{input type="checkbox" checked=isAdmin}} Admin user?
+            </label>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" {{action "createSignup"}}>Register</button>
+          <p>{{#link-to "signups.index" activeClass="selected"}}All Signups{{/link-to}}
+        </form>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="signups/index">
+      <div class="col-lg-6">
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Is Admin?</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each signup in model}}
+            <tr>
+              <td>{{signup.id}}</td>
+              <td>{{signup.name}}</td>
+              <td>{{signup.email}}</td>
+              <td>{{signup.isAdmin}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <p>{{#link-to "index" activeClass="selected"}}Back{{/link-to}}
+    </div>
+    </script>
+
+
+
+
+    <!-- js at bottom -->
+    <script src="js/libs/jquery-1.10.2.min.js"></script>
+    <script src="js/libs/handlebars-v1.3.0.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/libs/ember-data.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <script src="js/app/app.js"></script>
+    <script src="js/app/router.js"></script>
+    <script src="js/app/controllers/signup_controller.js"></script>
+    <script src="js/app/controllers/signups_controller.js"></script>
+    <script src="js/app/models/signup.js"></script>
+
+
+  </body>
+</html>
