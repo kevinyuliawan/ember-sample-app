@@ -4,6 +4,10 @@ window.App = Ember.Application.create({
 
 // App.ApplicationAdapter = DS.FixtureAdapter.extend(); //for fixtures in models/signup.js , eventually change to Mailchimp API
 
+App.ApplicationAdapter = DS.RESTAdapter.extend({
+  host: 'http://us9.api.mailchimp.com/2.0'
+});
+
 App.SignupAdapter = DS.RESTAdapter.extend({
   createRecord: function(store, type, record){
     var data = {};
