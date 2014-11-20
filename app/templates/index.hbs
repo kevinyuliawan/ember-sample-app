@@ -1,0 +1,31 @@
+<form class="form-signin" role="form">
+          <h2 class="form-signin-heading">Sign up</h2>
+
+        <div class="alert alert-info customalert" id="showWarning" style="display:none;"><strong>Heads up!</strong> Please make sure that you have provided a valid e-mail and one that is not already signed up with Inbox Health.</div>
+
+          <div class="form-group" id="emailField">
+            {{input type="email" class="form-control" placeholder="Email address" value=newEmail}}
+          </div>
+
+          <button class="btn btn-lg btn-primary btn-block" type="submit" {{action "createSignup"}}>Register</button>
+
+          <br>
+          <p>{{#link-to "signups.index" activeClass="selected"}}All Signups{{/link-to}}
+        </form>
+
+      <!-- Small modal -->
+      <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="modal-submit">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Submission successful!</h4>
+            </div>
+            <div class="modal-body">
+              <p>Thanks for signing up with Inbox Health! A confirmation message has been sent to the e-mail you provided.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- /end modal -->

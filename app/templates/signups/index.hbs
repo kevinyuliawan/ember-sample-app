@@ -1,0 +1,21 @@
+<div class="col-lg-6">
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each signup in model}}
+            <tr>
+              <td>{{_view.contentIndex}}</td>
+              <td>{{signup.id}}</td>
+              <td>{{signup.email}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <p>{{#link-to "index" activeClass="selected"}}Back{{/link-to}}
+    </div>
